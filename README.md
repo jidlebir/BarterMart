@@ -1,9 +1,9 @@
 ### BarterMart
 
 # USER STORY
-	AS AN user of BarterMart I WANT POST (offer) an item to trade amongst other users.
-	AS AN user I WANT to trade good and services with other users.
-	AS AN user I WANT to be able to manage my Inventory/Post and the offers/comments on each
+	AS A user of BarterMart I WANT POST (offer) an item to trade amongst other users.
+	AS A user I WANT to trade good and services with other users.
+	AS A user I WANT to be able to manage my Inventory/Post and the offers/comments on each
 
 # OFFER AN ITEM
 	Login Create a Post with Item or Service being offered 
