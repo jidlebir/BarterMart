@@ -18,7 +18,9 @@ function App() {
           </div>
         </header>
         <div className="container">
-          <Home />
+          <Homepages/>
+          <Footer/>
+          <Loginpages/>
         </div>
       </div>
     </ApolloProvider>
