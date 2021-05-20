@@ -10,9 +10,17 @@ const typeDefs = gql`
     comments: [Comment]
   }
 
+  type Comment {
+    _id: ID
+    tradeItem: String
+    commentText: String
+    acceptedFlag: Boolean
+  }
+
   type Query {
     items: [Item]
     item(title: String!): Item
+    comments: [Comment]
   }
 
   type Mutation {
