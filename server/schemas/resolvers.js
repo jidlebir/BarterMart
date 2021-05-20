@@ -1,18 +1,18 @@
-const { Book } = require('../models');
+const { Item } = require('../models');
 
 const resolvers = {
   Query: {
-    books: async () => {
-      return Book.find();
+    items: async () => {
+      return Item.find();
     },
-    book: async (parent, { title }) => {
-      return Book.findOne({ title });
+    item: async (parent, { title }) => {
+      return Item.findOne({ title });
     }
   },
   Mutation: {
-    addBook: async (parent, args) => {
-      const book = await Book.create(args);
-      return book;
+    addItem: async (parent, args) => {
+      const item = await Item.create(args);
+      return item;
     }
   }
 };
