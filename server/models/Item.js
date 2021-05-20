@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
 
-const ItemSchema = new Schema({
+const itemSchema = new Schema({
   image: {
     type: String,
     required: true,
