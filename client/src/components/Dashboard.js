@@ -2,7 +2,7 @@ import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
-import Home from './pages/Home';
+import Home from './pages/Homepages';
 
 const client = new ApolloClient({
   uri: '/Bartermart'
