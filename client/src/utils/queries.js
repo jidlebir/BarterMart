@@ -1,8 +1,8 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
-export const QUERY_BOOKS = gql`
-  query books {
-    books {
+export const QUERY_ITEMS = gql`
+  query items {
+    item {
       _id
       title
       author

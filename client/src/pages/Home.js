@@ -1,15 +1,15 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { QUERY_BOOKS } from '../utils/queries';
-import BookList from '../components/BookList';
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { QUERY_ITEMS } from "../utils/queries";
+import itemList from "../components/itemList";
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_BOOKS);
-  const books = data?.books || [];
+  const { loading, data } = useQuery(QUERY_ITEMS);
+  const items = data?.Item || [];
 
   return (
     <main>
-      <div>{loading ? <div>Loading...</div> : <BookList books={books} />}</div>
+      <div>{loading ? <div>Loading...</div> : <itemList items={items} />}</div>
     </main>
   );
 };

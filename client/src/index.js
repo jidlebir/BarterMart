@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
+
+// eslint-disable-next-line
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
