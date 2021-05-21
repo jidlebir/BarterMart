@@ -29,9 +29,15 @@ const typeDefs = gql`
     comments: [Comment]
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Mutation {
     addItem(title: String!, user: String!, description: String, image: String): Item
-    login(email: String!, password: String!): User
+    // login(email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): User
   }
 `;
