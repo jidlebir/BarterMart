@@ -16,12 +16,6 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username });
     },
-    // comments: async () => {
-    //   return Comment.find();
-    // },
-    // comment: async (parent, { commentText }) => {
-    //   return Comment.findOne({ commentText });
-    // },
   },
   Mutation: {
     addItem: async (parent, args) => {
