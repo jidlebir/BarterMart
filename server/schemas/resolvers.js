@@ -13,6 +13,10 @@ const resolvers = {
     addItem: async (parent, args) => {
       const item = await Item.create(args);
       return item;
+    },
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      return user;
     }
   }
 };
