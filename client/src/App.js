@@ -1,13 +1,12 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-
 import Homepages from './pages/Loginpage';
 import Loginpages from './pages/Homepages';
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './index.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
