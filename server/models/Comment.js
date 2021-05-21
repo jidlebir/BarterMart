@@ -18,4 +18,7 @@ const commentSchema = new Schema({
     required: true,
   },
 });
+
+// const Comment = model('Comment', commentSchema);
+
 module.exports = commentSchema;
