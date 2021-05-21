@@ -4,7 +4,11 @@ import ApolloClient from 'apollo-boost';
 
 import Homepages from './pages/Loginpage';
 import Loginpages from './pages/Homepages';
-
+import Login from "./components/login.component";
+import SignUp from "./components/signup.component";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 const client = new ApolloClient({
@@ -22,7 +26,6 @@ function App() {
         </header>
         <div className="container">
           <Homepages/>
-          <Footer/>
           <Loginpages/>
         </div>
       </div>
@@ -32,20 +35,12 @@ function App() {
 
 export default App;
 
-import React from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import Login from "./components/login.component";
-import SignUp from "./components/signup.component";
-
 function App() {
   return (<Router>
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to={"/sign-in"}>positronX.io</Link>
+          <Link className="navbar-brand" to={"/sign-in"}>Welcome</Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
