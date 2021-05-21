@@ -1,5 +1,5 @@
 const { Schema, Types } = require('mongoose');
-const CommentSchema = new Schema({
+const commentSchema = new Schema({
   commentId: {
     type: Schema.Types.ObjectId,
     default: () => new Types.ObjectId(),
@@ -19,6 +19,6 @@ const CommentSchema = new Schema({
   },
 });
 
-const Comment = model('Comment', CommentSchema);
+// const Comment = model('Comment', CommentSchema);
 
-module.exports = Comment;
+module.exports = commentSchema;

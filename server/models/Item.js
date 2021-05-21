@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
-const CommentSchema = require('./Comment');
+const commentSchema = require('./Comment');
 
-const ItemSchema = new Schema({
+const itemSchema = new Schema({
   image: {
     type: String,
     required: true,
@@ -18,9 +18,9 @@ const ItemSchema = new Schema({
     type: String,
     required: true,
   },
-  comments: [CommentSchema]
+  comments: [commentSchema]
 });
 
-const Item = model('Item', ItemSchema);
+// const Item = model('Item', itemSchema);
 
-module.exports = Item;
+module.exports = itemSchema;
