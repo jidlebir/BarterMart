@@ -1,19 +1,48 @@
-const { Book } = require('../models');
+const { Item, User, Comment } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    books: async () => {
-      return Book.find();
+    items: async () => {
+      return Item.find();
     },
-    book: async (parent, { title }) => {
-      return Book.findOne({ title });
-    }
+    item: async (parent, { title }) => {
+      return Item.findOne({ title });
+    },
+    users: async () => {
+      return User.find();
+    },
+    user: async (parent, { username }) => {
+      return User.findOne({ username });
+    },
   },
   Mutation: {
-    addBook: async (parent, args) => {
-      const book = await Book.create(args);
-      return book;
-    }
+    addItem: async (parent, args) => {
+      const item = await Item.create(args);
+      return item;
+    },
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      return user;
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('That user does not exist');
+      }
+
+      if (password !== user.password) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+      const token = signToken(user);
+      return { token, user };
+    },
+    addComment: async (parent, args) => {
+      const comment = await Comment.create(args);
+      return comment;
+    },
   }
 };
 

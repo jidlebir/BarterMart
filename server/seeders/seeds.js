@@ -1,22 +1,22 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { Book } = require('../models');
+const { Item } = require('../models');
 
 db.once('open', async () => {
-  await Book.deleteMany({});
+  await Item.deleteMany({});
 
   // create user data
-  const bookData = [];
+  const itemData = [];
 
   for (let i = 0; i < 20; i++) {
-    const title = faker.company.catchPhrase();
-    const author = faker.name.findName();
-    const pages = faker.random.number();
+    const title = faker.commerce.productName();
+    const user = faker.name.findName();
+    const description = faker.lorem.paragraph();
 
-    bookData.push({ title, author, pages });
+    itemData.push({ title, user, description });
   }
-  await Book.collection.insertMany(bookData);
+  await Item.collection.insertMany(itemData);
 
   console.log('all done!');
   process.exit(0);
