@@ -6,8 +6,9 @@ function App() {
   import { BrowserRouter, Route, Switch } from 'react-router-dom';
   import Dashboard from '../Dashboard/Dashboard';
   import Preferences from '../Preferences/Preferences';
-  
+  import Login from '../Login/Login'
   function App() {
+    const [token, setToken] = useState();
     return (
       <div className="wrapper">
         <h1>WELCOME TO BARTERMART!</h1>
