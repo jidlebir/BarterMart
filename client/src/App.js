@@ -1,4 +1,9 @@
 import React from "react";
+
+// Using ES6 imports
+import mongoose from "mongoose";
+import * as mongodb from "mongodb";
+import Posts from "./components/Posts";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import logo from "./LOGO.png";
 import "./App.css";
@@ -22,6 +27,7 @@ function App() {
             <h1>Barter Mart</h1>
           </div>
         </header>
+        <Posts />
         <div className="container">
           <Home />
         </div>

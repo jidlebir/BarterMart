@@ -1,4 +1,7 @@
 import React from "react";
+// import config from "config";
+// MongoDB
+import * as mongodb from "mongodb";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,3 +16,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+// app.listen(3000, function () {
+//   console.log("Listening on port 3000!");
+// });
