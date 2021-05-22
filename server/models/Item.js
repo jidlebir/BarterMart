@@ -19,6 +19,16 @@ const itemSchema = new Schema({
     required: true,
   },
   comments: [commentSchema]
+},
+  {
+    toJSON: {
+      getters: true
+    }
+  }
+);
+
+itemSchema.virtual('commentCount').get(function () {
+  return this.comments.length;
 });
 
 const Item = model('Item', itemSchema);
