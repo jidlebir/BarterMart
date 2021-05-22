@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_ITEMS } from "../utils/queries";
-import itemList from "../components/itemList";
+import ItemList from "../components/ItemList";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
