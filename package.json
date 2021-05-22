@@ -31,7 +31,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "if-env": "^1.0.4",
+    "react-color": "^2.19.3"
   },
   "browserslist": {
     "production": [
@@ -45,4 +50,4 @@
       "last 1 safari version"
     ]
   }
-}
+  }}
