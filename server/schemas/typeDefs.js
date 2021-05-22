@@ -13,13 +13,16 @@ const typeDefs = gql`
     image: String
     user: String
     description: String
+    commentCount: Int
     comments: [Comment]
   }
 
   type Comment {
     _id: ID
-    tradeItem: String
     commentText: String
+    createdAt: String
+    username: String
+    tradeItem: String
     acceptedFlag: Boolean
   }
 

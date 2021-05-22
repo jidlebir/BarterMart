@@ -11,10 +11,14 @@ const resolvers = {
       return Item.findOne({ title });
     },
     users: async () => {
-      return User.find();
+      return User.find()
+        .select('__v -password')
+        .populate('items');
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username });
+      return User.findOne({ username })
+        .select('__v -password')
+        .populate('items');
     },
   },
   Mutation: {
