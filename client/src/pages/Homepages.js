@@ -1,17 +1,26 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_BOOKS } from '../utils/queries';
-import BookList from '../components/Login.componet';
+import { QUERY_ITEMS } from '../utils/queries';
+import ItemList from '../components/ItemList';
 
-const Homepa = () => {
-  const { loading, data } = useQuery(QUERY_BOOKS);
-  const books = data?.books || [];
+const Homepages = () => {
+  const { loading, data } = useQuery(QUERY_ITEMS);
+  const items = data?.items || [];
+  console.log(items);
 
   return (
     <main>
-      <div>{loading ? <div>Loading...</div> : <BookList books={books} />}</div>
+      <div className="flex-row justify-space-between">
+        <div className="col-12 mb-3">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <ItemList items={items} title="Some Feed for Item(s)..." />
+          )}
+        </div>
+      </div>
     </main>
   );
 };
 
-export default Home;
+export default Homepages;
