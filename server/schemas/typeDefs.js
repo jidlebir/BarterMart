@@ -5,13 +5,14 @@ const typeDefs = gql`
   _id: ID
   username: String
   email: String
+  items: [Item]
   }
 
   type Item {
     _id: ID
     title: String
     image: String
-    user: String
+    username: String
     description: String
     commentCount: Int
     comments: [Comment]
@@ -27,9 +28,10 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: User
     users: [User]
-    user(username: String): User
-    items: [Item]
+    user(username: String!): User
+    items(username: String): [Item]
     item(title: String!): Item
     comments: [Comment]
   }
@@ -41,9 +43,9 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     addItem(title: String!, user: String!, description: String, image: String): Item
-    addUser(username: String!, email: String!, password: String!): User
-    addComment(commentText: String!): Comment
+    addComment(itemId: ID!, commentText: String!): Item
   }
 `;
 
