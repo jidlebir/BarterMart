@@ -5,13 +5,9 @@ const db = require('./config/connection');
 const path = require('path');
 const cors = require('cors');
 const { authMiddleware } = require('./utils/auth');
-app.use(cors());
 
 
-const express = require('express');
-const cors = require('cors')
 const app = express();
-
 app.use(cors());
 
 app.use('/login', (req, res) => {
@@ -21,7 +17,6 @@ app.use('/login', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -42,12 +37,6 @@ app.get('*', (req, res) => {
 });
 
 db.once('open', () => {
-  const express = require('express');
-const cors = require('cors')
-const app = express();
-
-app.use(cors());
-
 app.use('/login', (req, res) => {
   res.send({
     token: 'test123'
