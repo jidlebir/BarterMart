@@ -14,6 +14,7 @@ const typeDefs = gql`
     image: String
     username: String
     description: String
+    createdAt: String
     commentCount: Int
     comments: [Comment]
   }
