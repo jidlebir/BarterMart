@@ -6,7 +6,7 @@ const { Item } = require('../models');
 db.once('open', async () => {
   await Item.deleteMany({});
 
-  // create user data
+  // create item
   const itemData = [];
 
   for (let i = 0; i < 20; i++) {
