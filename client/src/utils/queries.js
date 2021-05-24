@@ -1,12 +1,15 @@
 import gql from 'graphql-tag';
 
-export const QUERY_BOOKS = gql`
-  query books {
-    books {
+export const QUERY_ITEMS = gql`
+  query items {
+    items {
       _id
       title
-      author
-      pages
+      image
+      user
+      description
+      commentcount
+      comments
     }
   }
 `;
