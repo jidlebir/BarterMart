@@ -5,7 +5,11 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Preferences from './components/Preferences';
-import Login from './components/Login/Login';
+import Loginpage from './pages/Loginpage';
+import NoMatch from './pages/NoMatch';
+import SingleItem from './pages/SingleItem';
+import Profile from './pages/Profile';
+import Signup from './pages/Signup';
 // import useToken from './useToken';
 
 const client = new ApolloClient({
