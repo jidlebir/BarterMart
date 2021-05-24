@@ -7,6 +7,10 @@ import Login from './pages/Login';
 import Homepages from './pages/Homepages';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+import NoMatch from './pages/NoMatch';
+import SingleItem from './pages/SingleItem';
+import Profile from './pages/Profile';
+import Signup from './pages/Signup';
 // import useToken from './useToken';
 
 const client = new ApolloClient({
