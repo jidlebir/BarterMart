@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ItemList = ({ items, title }) => {
     if (!items.length) {
@@ -12,15 +13,23 @@ const ItemList = ({ items, title }) => {
                 items.map(item => (
                     <div key={item._id} className="card mb-3">
                         <p className="card-header">
-                            {item.username}
+                            <Link
+                                to={`/profile/${item.username}`}
+                                style={{ fontWeight: 700 }}
+                                className="text-light"
+                            >
+                                {item.username}
+                            </Link>{' '}
               item on {item.createdAt}
                         </p>
                         <div className="card-body">
-                            <p>{item.description}</p>
-                            <p className="mb-0">
-                                Comments: {item.commentCount} || Click to{' '}
-                                {item.commentCount ? 'see' : 'start'} the discussion!
-              </p>
+                            <Link to={`/item/${item._id}`}>
+                                <p>{item.description}</p>
+                                <p className="mb-0">
+                                    Comments: {item.commentCount} || Click to{' '}
+                                    {item.commentCount ? 'see' : 'start'} the discussion!
+                            </p>
+                            </Link>
                         </div>
                     </div>
                 ))}

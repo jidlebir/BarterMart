@@ -1,17 +1,15 @@
 import React from 'react';
-// import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Login from './pages/Login';
-import Homepages from './pages/Homepages';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Homepages from './pages/Homepages';
+import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SingleItem from './pages/SingleItem';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
-// import useToken from './useToken';
 
 const client = new ApolloClient({
   request: operation => {
@@ -25,26 +23,26 @@ const client = new ApolloClient({
   uri: '/graphql'
 });
 
-
 function App() {
-  // const [token, setToken] = useState();
   return (
     <ApolloProvider client={client}>
-    <BrowserRouter>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
-        <div className="container">
-    
-      <Switch>
-              <Route exact path="/Homepages" component={Homepages} />
-              <Route exact path="/Login" component={Login} />
-             
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            <Switch>
+              <Route exact path="/" component={Homepages} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/profile/:username?" component={Profile} />
+              <Route exact path="/item/:id" component={SingleItem} />
+
+              <Route component={NoMatch} />
             </Switch>
-            </div>
-          <Footer/>
+          </div>
+          <Footer />
         </div>
-      </BrowserRouter>
-      
+      </Router>
     </ApolloProvider>
   );
 }
@@ -62,11 +60,3 @@ export default App;
 //   return userToken?.token
 
 // }
-
-
-
-
-
-
-
-
