@@ -4,11 +4,11 @@ class AuthService {
   getProfile() {
     return decode(this.getToken());
   }
-
+  // check if user still logged in
   loggedIn() {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken();
-    return !!token && !this.isTokenExpired(token); // handwaiving here
+    return !!token && !this.isTokenExpired(token);
   }
 
   isTokenExpired(token) {
@@ -22,8 +22,8 @@ class AuthService {
     }
   }
 
+  // Retrieves the user token from localStorage
   getToken() {
-    // Retrieves the user token from localStorage
     return localStorage.getItem('id_token');
   }
 
