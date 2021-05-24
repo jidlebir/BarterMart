@@ -1253,3 +1253,9 @@ nav a:hover {
     align-items: center;
   }
 }
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
