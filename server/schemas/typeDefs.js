@@ -29,7 +29,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: User
+    account: User
     users: [User]
     user(username: String!): User
     items(username: String): [Item]

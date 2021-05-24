@@ -3,20 +3,10 @@ const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const path = require('path');
-const cors = require('cors');
 const { authMiddleware } = require('./utils/auth');
 
-
-const app = express();
-app.use(cors());
-
-app.use('/login', (req, res) => {
-  res.send({
-    token: 'Peter got TECHED'
-  });
-});
-
 const PORT = process.env.PORT || 3001;
+const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -37,11 +27,8 @@ app.get('*', (req, res) => {
 });
 
 db.once('open', () => {
-app.use('/login', (req, res) => {
-  res.send({
-    token: 'test123'
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+    console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
-
-app.listen(8080, () => console.log('API is running on http://localhost:8080/login'));
-  });
