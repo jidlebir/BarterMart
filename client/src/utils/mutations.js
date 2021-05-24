@@ -25,12 +25,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_ITEMS = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+  mutation addItem($title: String!) {
+    addItem(title: $title) {
       _id
       title
       image
-      username
+      user
       description
       commentcount
       comments {
