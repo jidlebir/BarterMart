@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Login from './pages/Login';
+import Homepages from './pages/Homepages';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Preferences from './components/Preferences';
-import Loginpage from './pages/Loginpage';
 import NoMatch from './pages/NoMatch';
 import SingleItem from './pages/SingleItem';
 import Profile from './pages/Profile';
@@ -15,7 +16,6 @@ import Signup from './pages/Signup';
 const client = new ApolloClient({
   request: operation => {
     const token = localStorage.getItem('id_token');
-
     operation.setContext({
       headers: {
         authorization: token ? `Bearer ${token}` : ''
@@ -25,40 +25,43 @@ const client = new ApolloClient({
   uri: '/graphql'
 });
 
+
 function App() {
-  const [token, setToken] = useState();
+  // const [token, setToken] = useState();
   return (
     <ApolloProvider client={client}>
-      <div className="wrapper">
-        <h1>WELCOME TO BARTERMART!</h1>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-            <Route path="/preferences">
-              <Preferences />
-            </Route>
-          </Switch>
-        </BrowserRouter>
-      </div>
+    <BrowserRouter>
+      <div className="flex-column justify-flex-start min-100-vh">
+        <Header />
+        <div className="container">
+    
+      <Switch>
+              <Route exact path="/Homepages" component={Homepages} />
+              <Route exact path="/Login" component={Login} />
+             
+            </Switch>
+            </div>
+          <Footer/>
+        </div>
+      </BrowserRouter>
+      
     </ApolloProvider>
   );
 }
 
 export default App;
 
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
+// function setToken(userToken) {
+//   sessionStorage.setItem('token', JSON.stringify(userToken));
+// }
 
 
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
+// function getToken() {
+//   const tokenString = sessionStorage.getItem('token');
+//   const userToken = JSON.parse(tokenString);
+//   return userToken?.token
 
-}
+// }
 
 
 

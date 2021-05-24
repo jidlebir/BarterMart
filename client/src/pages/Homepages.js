@@ -1,24 +1,41 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_ITEMS } from '../utils/queries';
-import ItemList from '../components/ItemList';
+
+
+
+
+
+import Auth from '../utils/auth';
 
 const Homepages = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
   const items = data?.items || [];
-  console.log(items);
+
+  const loggedIn = Auth.loggedIn();
 
   return (
     <main>
-      <div className="flex-row justify-space-between">
-        <div className="col-12 mb-3">
+      {/* <div className="flex-row justify-space-between">
+        {loggedIn && (
+          <div className="col-12 mb-3">
+            <ThoughtForm />
+          </div>
+        )}
+        <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ItemList items={items} title="Some Feed for Item(s)..." />
+            <ThoughtList thoughts={thoughts} title="Some Feed for Thought(s)..." />
           )}
         </div>
-      </div>
+        {loggedIn && userData ? (
+          <div className="col-12 col-lg-3 mb-3">
+            
+          </div>
+        ) : null}
+      </div> */}
+
     </main>
   );
 };
