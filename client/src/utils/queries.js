@@ -10,6 +10,7 @@ export const QUERY_ITEMS = gql`
       description
       commentcount
       comments
+
     }
   }
 `;

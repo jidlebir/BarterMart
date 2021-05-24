@@ -22,7 +22,6 @@ const client = new ApolloClient({
 });
 
 
-
 function App() {
   // const [token, setToken] = useState();
   return (

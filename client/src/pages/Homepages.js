@@ -5,6 +5,7 @@ import { QUERY_ITEMS } from '../utils/queries';
 
 
 
+
 import Auth from '../utils/auth';
 
 const Homepages = () => {
@@ -34,6 +35,7 @@ const Homepages = () => {
           </div>
         ) : null}
       </div> */}
+
     </main>
   );
 };
