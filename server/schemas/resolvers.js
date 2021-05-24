@@ -1,11 +1,11 @@
-const { Item, User, Comment } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { User, Item } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    me: async (parent, args) => {
-      if (AudioContext.user) {
+    account: async (parent, args, context) => {
+      if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('items');
@@ -14,21 +14,22 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
-    items: async () => {
-      return Item.find();
-    },
-    item: async (parent, { title }) => {
-      return Item.findOne({ title });
-    },
     users: async () => {
       return User.find()
-        .select('__v -password')
+        .select('-__v -password')
         .populate('items');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
-        .select('__v -password')
+        .select('-__v -password')
         .populate('items');
+    },
+    items: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Item.find(params).sort({ createdAt: -1 });
+    },
+    item: async (parent, { title }) => {
+      return Item.findOne({ title });
     },
   },
   Mutation: {
