@@ -1,9 +1,10 @@
 import React from 'react';
+
 import Login from '../components/Login';
 import NoMatch from '../components/NoMatch';
 import Profile from '../components/Profile';
 import Signup from  '../components/Signup';
-import singleitems from '../pages/SingleItem';
+import ingleitems from '../pages/SingleItem';
 
 
 import Auth from '../utils/auth';
@@ -30,7 +31,7 @@ const Homepages = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <QUERY_ITEMS thoughts={thoughts} title="Any good Barters?(s)..." />
+            <QUERY_ITEMS ={thoughts} title="Any good Barters?(s)..." />
           )}
         </div>
         {loggedIn && userData ? (
