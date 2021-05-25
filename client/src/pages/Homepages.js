@@ -1,12 +1,27 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { QUERY_ITEMS } from '../utils/queries';
+import React from "react";
+import ReactDOM from "react-dom";
+import ItemCard from "../components/Cards/product";
 
+import { useQuery } from "@apollo/react-hooks";
+import { QUERY_ITEMS } from "../utils/queries";
+import { makeStyles } from "@material-ui/core/styles";
 
-
-
-
-import Auth from '../utils/auth';
+// import clsx from "clsx";
+// import Card from "@material-ui/core/Card";
+// import CardHeader from "@material-ui/core/CardHeader";
+// import CardMedia from "@material-ui/core/CardMedia";
+// import CardContent from "@material-ui/core/CardContent";
+// import CardActions from "@material-ui/core/CardActions";
+// import Collapse from "@material-ui/core/Collapse";
+// import Avatar from "@material-ui/core/Avatar";
+// import IconButton from "@material-ui/core/IconButton";
+// import Typography from "@material-ui/core/Typography";
+// import { red } from "@material-ui/core/colors";
+// import FavoriteIcon from "@material-ui/icons/Favorite";
+// import ShareIcon from "@material-ui/icons/Share";
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Auth from "../utils/auth";
 
 const Homepages = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
@@ -16,26 +31,8 @@ const Homepages = () => {
 
   return (
     <main>
-      {/* <div className="flex-row justify-space-between">
-        {loggedIn && (
-          <div className="col-12 mb-3">
-            <ThoughtForm />
-          </div>
-        )}
-        <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <ThoughtList thoughts={thoughts} title="Some Feed for Thought(s)..." />
-          )}
-        </div>
-        {loggedIn && userData ? (
-          <div className="col-12 col-lg-3 mb-3">
-            
-          </div>
-        ) : null}
-      </div> */}
-
+      <h1>Dashboard</h1>
+      <ItemCard />
     </main>
   );
 };
