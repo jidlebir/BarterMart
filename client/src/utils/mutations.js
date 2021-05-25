@@ -41,13 +41,16 @@ export const ADD_ITEMS = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
-    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+  mutation addComment($commentId: ID!, $commentText: String!) {
+    addComment(commentId: $commentId, commentText: $commentText) {
       _id
-      reactionCount
-      reactions {
+      commentText
+      acceptedFlag
+      tradeItem
+      username
+      createdAt {
         _id
-        reactionBody
+        commentText
         createdAt
         username
       }
