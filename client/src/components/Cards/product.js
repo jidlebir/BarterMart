@@ -15,6 +15,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,22 +63,26 @@ export default function ItemCard({ item }) {
           </IconButton>
         }
         title={item.title}
-        subheader="September 14, 2016"
+        subheader={item.createdAt}
       />
-      {/* <CardMedia className={classes.media} src="./assets/PS5.jpg" title="PS5" /> */}
+      
+      <CardMedia 
+      className={classes.media} 
+      image={item.image} 
+      title={item.title}/>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This PS5 is being offered at $$$.
+      <p>{item.description}</p>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton aria-label="localoffer">
+          <LocalOfferIcon />
         </IconButton>
-        <IconButton
+        {/* <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
           })}
@@ -85,7 +91,7 @@ export default function ItemCard({ item }) {
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
