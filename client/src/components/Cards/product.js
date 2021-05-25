@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ItemCard() {
+export default function ItemCard({ item }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -60,7 +60,7 @@ export default function ItemCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="PlayStation 5"
+        title={item.title}
         subheader="September 14, 2016"
       />
       {/* <CardMedia className={classes.media} src="./assets/PS5.jpg" title="PS5" /> */}

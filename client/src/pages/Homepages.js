@@ -22,20 +22,20 @@ import { makeStyles } from "@material-ui/core/styles";
 // import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Auth from "../utils/auth";
-
 import ItemList from "../components/ItemList";
 
 const Homepages = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
+  console.log(data);
   // const { data: userData } = useQuery(QUERY_ACCOUNT_BASIC);
   const items = data?.items || [];
 
-  const loggedIn = Auth.loggedIn();
+  // const loggedIn = Auth.loggedIn();
 
   return (
     <main>
       <h1>Dashboard</h1>
-      <ItemCard />
+      <ItemList items={items} />
     </main>
   );
 };

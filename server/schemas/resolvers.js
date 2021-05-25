@@ -24,9 +24,12 @@ const resolvers = {
         .select('-__v -password')
         .populate('items');
     },
-    items: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Item.find(params).sort({ createdAt: -1 });
+    // items: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return Item.find(params).sort({ createdAt: -1 });
+    // },
+    items: async () => {
+      return Item.find().sort({ createdAt: -1 });
     },
     item: async (parent, { title }) => {
       return Item.findOne({ title });
