@@ -1,4 +1,4 @@
-const faker = require('faker');
+// const faker = require('faker');
 
 const db = require('../config/connection');
 const { Item, User } = require('../models');
@@ -11,9 +11,9 @@ db.once('open', async () => {
   const userData = [];
 
   for (let i = 0; i < 50; i += 1) {
-    const username = faker.internet.userName();
-    const email = faker.internet.email(username);
-    const password = faker.internet.password();
+    // const username = faker.internet.userName();
+    // const email = faker.internet.email(username);
+    // const password = faker.internet.password();
 
     userData.push({ username, email, password });
   }
@@ -23,7 +23,7 @@ db.once('open', async () => {
   // create items
   let createdItems = [];
   for (let i = 0; i < 100; i += 1) {
-    const description = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    // const description = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
@@ -40,7 +40,7 @@ db.once('open', async () => {
 
   // create comments
   for (let i = 0; i < 100; i += 1) {
-    const commentText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    // const commentText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username } = createdUsers.ops[randomUserIndex];
