@@ -6,11 +6,8 @@ export const QUERY_ITEMS = gql`
       _id
       title
       image
-      user
+      username
       description
-      commentCount
-      comments
-
     }
   }
 `;

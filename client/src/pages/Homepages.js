@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-import Login from '../components/Login';
-import NoMatch from '../components/NoMatch';
-import Profile from '../components/Profile';
-import Signup from  '../components/Signup';
-import ingleitems from '../pages/SingleItem';
-=======
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -32,11 +23,9 @@ import { makeStyles } from "@material-ui/core/styles";
 // import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Auth from "../utils/auth";
-
-
 import ItemList from '../components/ItemList';
->>>>>>> 17c9f8cea30f79c6179d0d3fb8abf92f44b083e0
 
+<<<<<<< HEAD
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/react-hooks';
@@ -50,11 +39,16 @@ const Homepages = () => {
   const { data: userData } = useQuery(LOGIN_USER);
   const thoughts = data?.thoughts || [];
 =======
+=======
+const Homepages = () => {
+  const { loading, data } = useQuery(QUERY_ITEMS);
+  console.log(data)
+>>>>>>> 07ba43572b83b4821d2d68249cc490261de2c572
   // const { data: userData } = useQuery(QUERY_ACCOUNT_BASIC);
   const items = data?.items || [];
 >>>>>>> 17c9f8cea30f79c6179d0d3fb8abf92f44b083e0
 
-  const loggedIn = Auth.loggedIn();
+  // const loggedIn = Auth.loggedIn();
 
   return (
     <main>
@@ -85,7 +79,7 @@ const Homepages = () => {
 =======
 
       <h1>Dashboard</h1>
-      <ItemCard />
+      <ItemList items={items} />
 
 >>>>>>> 17c9f8cea30f79c6179d0d3fb8abf92f44b083e0
     </main>
