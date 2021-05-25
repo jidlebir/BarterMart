@@ -1,4 +1,3 @@
-
 import React from "react";
 import ReactDOM from "react-dom";
 import ItemCard from "../components/Cards/product";
@@ -8,7 +7,13 @@ import { QUERY_ITEMS } from "../utils/queries";
 import { makeStyles } from "@material-ui/core/styles";
 
 // import clsx from "clsx";
-// import Card from "@material-ui/core/Card";
+import {
+  Grid,
+  Card,
+  CardContent,
+  Typography,
+  CardHeader,
+} from "@material-ui/core/";
 // import CardHeader from "@material-ui/core/CardHeader";
 // import CardMedia from "@material-ui/core/CardMedia";
 // import CardContent from "@material-ui/core/CardContent";
@@ -23,11 +28,11 @@ import { makeStyles } from "@material-ui/core/styles";
 // import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Auth from "../utils/auth";
-import ItemList from '../components/ItemList';
+import ItemList from "../components/ItemList";
 
 const Homepages = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
-  console.log(data)
+  console.log(data);
   // const { data: userData } = useQuery(QUERY_ACCOUNT_BASIC);
   const items = data?.items || [];
 
@@ -35,10 +40,9 @@ const Homepages = () => {
 
   return (
     <main>
-
       <h1>Dashboard</h1>
-      <ItemList items={items} />
 
+      <ItemList items={items} />
     </main>
   );
 };
