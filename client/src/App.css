@@ -3,12 +3,13 @@
 }
 
 :root {
-  --primary: #497573;
-  --secondary: #99f7f2;
-  --tertiary: #b2c2c1;
-  --quatrinary: #cadbda;
-  --light: #e1f5f4;
-  --dark: #6c7575;
+  /* CSS HEX */
+  --primary: #848fa5ff;
+  --secondary: #273f3eff;
+  --tertiary: #823038ff;
+  --quatrinary: #ffffffff;
+  --light: #ffffffff;
+  --dark: #000000ff;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -30,12 +31,29 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   font-weight: 400;
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
   background-color: #f3fffee1;
+}
+
+/* HERO STYLING */
+#hero {
+  background: url(./assets/hero-bg.jpg) no-repeat center;
+  background-size: cover;
+  min-height: 630px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid #15191d;
+}
+
+.hero-content {
+  position: relative;
+  padding-top: 66px;
+  padding-bottom: 102px;
 }
 
 h1,
@@ -44,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-weight: 700;
   margin: 5px 0;
   line-height: 1.25;
@@ -89,6 +107,11 @@ a:visited {
   color: inherit;
 }
 
+a:hover {
+  color: inherit;
+  text-decoration: underline -- light;
+}
+
 nav {
   width: 100%;
   justify-content: center;
@@ -102,7 +125,7 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  text-decoration: underline var(--dark);
 }
 
 .page-title {
@@ -146,9 +169,9 @@ nav a:hover {
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--light);
   margin: 0;
-  background-color: var(--dark);
+  background-color: var(--secondary);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -179,13 +202,13 @@ nav a:hover {
   border-radius: var(--border-radius);
 }
 
-[type='radio']:checked,
-[type='radio']:not(:checked) {
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
   position: absolute;
   left: -9999px;
 }
-[type='radio']:checked + label,
-[type='radio']:not(:checked) + label {
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -195,9 +218,9 @@ nav a:hover {
   margin-right: 0.2rem;
 }
 
-[type='radio']:checked + label:before,
-[type='radio']:not(:checked) + label:before {
-  content: '';
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -207,9 +230,9 @@ nav a:hover {
   border-radius: 100%;
   background: #fff;
 }
-[type='radio']:checked + label:after,
-[type='radio']:not(:checked) + label:after {
-  content: '';
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
   width: 12px;
   height: 12px;
   background-color: var(--secondary);
@@ -221,13 +244,13 @@ nav a:hover {
   transition: all 0.2s ease;
 }
 
-[type='radio']:not(:checked) + label:after {
+[type="radio"]:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-[type='radio']:checked + label:after {
+[type="radio"]:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -1258,4 +1281,5 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--light);
 }
