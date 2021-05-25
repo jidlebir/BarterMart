@@ -1,32 +1,23 @@
-const { Schema, Types } = require('mongoose');
-const commentSchema = new Schema({
-  commentId: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(),
+const { Schema } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
+
+const commentSchema = new Schema(
+  {
+    commentText: {
+      type: String,
+      required: true,
+      maxlenght: 300
+    },
+    username: {
+      type: String,
+      required: true
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: timestamp => dateFormat(timestamp)
+    }
   },
-  tradeItem: {
-    type: String,
-    required: true
-  },
-  acceptedFlag: {
-    type: Boolean,
-    required: true,
-    default: false
-  },
-  commentText: {
-    type: String,
-    required: true,
-  },
-  username: {
-    type: String,
-    required: true
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    get: timestamp => dateFormat(timestamp)
-  }
-},
   {
     toJSON: {
       getters: true
