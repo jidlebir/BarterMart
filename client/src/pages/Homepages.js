@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDOM from "react-dom";
 import ItemCard from "../components/Cards/product";
@@ -23,16 +24,26 @@ import { makeStyles } from "@material-ui/core/styles";
 // import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Auth from "../utils/auth";
 
+
+import ItemList from '../components/ItemList';
+
+
+import Auth from '../utils/auth';
+
+
 const Homepages = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
+  // const { data: userData } = useQuery(QUERY_ACCOUNT_BASIC);
   const items = data?.items || [];
 
   const loggedIn = Auth.loggedIn();
 
   return (
     <main>
+
       <h1>Dashboard</h1>
       <ItemCard />
+
     </main>
   );
 };

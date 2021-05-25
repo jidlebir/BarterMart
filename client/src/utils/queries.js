@@ -48,3 +48,41 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ACCOUNT = gql`
+  {
+    profile {
+      _id
+      username
+      email
+      items {
+        _id
+        title
+        description
+        createdAt
+        commentCount
+        comments {
+          _id
+          createdAt
+          commentText
+          username
+        }
+      }
+    }
+  }
+`;
+
+export const QUERY_ACCOUNT_BASIC = gql`
+  {
+    profile {
+      _id
+      username
+      email
+      itemCount
+      items {
+        title
+        description
+      }
+    }
+  }
+`;
