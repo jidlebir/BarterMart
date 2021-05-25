@@ -1,33 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-boost';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Homepages from './pages/Homepages';
-import Login from './pages/Login';
-import NoMatch from './pages/NoMatch';
-import SingleItem from './pages/SingleItem';
-import Profile from './pages/Profile';
-import Signup from './pages/Signup';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ApolloProvider } from "@apollo/react-hooks";
+import ApolloClient from "apollo-boost";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Homepages from "./pages/Homepages";
+import Login from "./pages/Login";
+import NoMatch from "./pages/NoMatch";
+import SingleItem from "./pages/SingleItem";
+import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
+import "../src/App.css";
 
 const client = new ApolloClient({
-  request: operation => {
-    const token = localStorage.getItem('id_token');
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
     operation.setContext({
       headers: {
-        authorization: token ? `Bearer ${token}` : ''
-      }
+        authorization: token ? `Bearer ${token}` : "",
+      },
     });
   },
-  uri: '/graphql'
+  uri: "/graphql",
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="flex-column justify-flex-start min-100-vh" id="#hero">
           <Header />
           <div className="container">
             <Switch>
@@ -52,7 +53,6 @@ export default App;
 // function setToken(userToken) {
 //   sessionStorage.setItem('token', JSON.stringify(userToken));
 // }
-
 
 // function getToken() {
 //   const tokenString = sessionStorage.getItem('token');
