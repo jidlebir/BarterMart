@@ -3,8 +3,10 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="w-100 mt-auto bg-secondary p-4">
-      <div className="container">&copy;2020 BARTERMART</div>
+      <div className="container">&copy;2021 BARTERMART</div>
     </footer>
   );
 };
 export default Footer;
+
+
