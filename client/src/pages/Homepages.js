@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemForm from '../components/ItemForm';
 import ItemList from '../components/ItemList';
 
 import { useQuery } from '@apollo/react-hooks';
@@ -15,6 +16,11 @@ const Homepages = () => {
   return (
     <main>
       <div className="flex-row justify-space-between">
+        {loggedIn && (
+          <div className="col-12 mb-3">
+            <ItemForm />
+          </div>
+        )}
         <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
           {loading ? (
             <div>Loading...</div>
