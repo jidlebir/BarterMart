@@ -16,6 +16,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import lazyboy from "../../assets/pictures/Lazyboy.png"
 
 
 const useStyles = makeStyles((theme) => ({
