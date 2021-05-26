@@ -16,8 +16,6 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import lazyboy from "../../assets/pictures/Lazyboy.png"
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,14 +64,14 @@ export default function ItemCard({ item }) {
         title={item.title}
         subheader={item.createdAt}
       />
-      
-      <CardMedia 
-      className={classes.media} 
-      image={item.image} 
-      title={item.title}/>
+
+      <CardMedia
+        className={classes.media}
+        image={item.image}
+        title={item.title} />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-      <p>{item.description}</p>
+          <p>{item.description}</p>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
