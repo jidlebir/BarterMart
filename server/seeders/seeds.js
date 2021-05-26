@@ -1,9 +1,9 @@
 // const faker = require('faker');
 
-const db = require('../config/connection');
-const { Item, User } = require('../models');
+const db = require("../config/connection");
+const { Item, User } = require("../models");
 
-db.once('open', async () => {
+db.once("open", async () => {
   await Item.deleteMany({});
   await User.deleteMany({});
 
@@ -45,7 +45,9 @@ db.once('open', async () => {
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username } = createdUsers.ops[randomUserIndex];
 
-    const randomCommentIndex = Math.floor(Math.random() * createdComments.length);
+    const randomCommentIndex = Math.floor(
+      Math.random() * createdComments.length
+    );
     const { _id: commentId } = createdComments[randomCommentIndex];
 
     await Comment.updateOne(
@@ -55,6 +57,6 @@ db.once('open', async () => {
     );
   }
 
-  console.log('all done!');
+  console.log("all done!");
   process.exit(0);
 });
