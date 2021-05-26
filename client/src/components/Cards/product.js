@@ -17,8 +17,6 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import { Link } from "react-router-dom";
 
-
-import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import { Grid, GridList, GridListTile } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -73,22 +71,22 @@ export default function ItemCard({ item }) {
             <MoreVertIcon />
           </IconButton>
         }
-        
+
         title={item.title}
         subheader={item.createdAt}
       />
-      
-      <CardMedia component={Link} to={`/item/${item.id}`}
-      className={classes.media} 
-      
-      image={item.image} 
-      title={item.title}/>
 
-      <CardMedia
+      <CardMedia component={Link} to={`/item/${item.id}`}
+        className={classes.media}
+
+        image={item.image}
+        title={item.title} />
+
+      {/* <CardMedia
         className={classes.media}
         image={item.image}
         title={item.title}
-      />
+      /> */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           <p>{item.description}</p>
