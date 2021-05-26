@@ -16,16 +16,13 @@ export const QUERY_ITEM = gql`
   query item($id: ID!) {
     item(_id: $id) {
       _id
+      title
+      image
       description
       createdAt
       username
-      commentCount
-      comments {
-        _id
-        createdAt
-        username
-        commentText
-      }
+      
+      
     }
   }
 `;

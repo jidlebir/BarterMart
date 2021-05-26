@@ -13,6 +13,11 @@ import { blue } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+
+import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import { Link } from "react-router-dom";
+
+
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import { Grid, GridList, GridListTile } from "@material-ui/core";
 
@@ -68,9 +73,16 @@ export default function ItemCard({ item }) {
             <MoreVertIcon />
           </IconButton>
         }
+        
         title={item.title}
         subheader={item.createdAt}
       />
+      
+      <CardMedia component={Link} to={`/item/${item.id}`}
+      className={classes.media} 
+      
+      image={item.image} 
+      title={item.title}/>
 
       <CardMedia
         className={classes.media}
@@ -85,7 +97,7 @@ export default function ItemCard({ item }) {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
+        </IconButton >
         <IconButton aria-label="localoffer">
           <LocalOfferIcon />
         </IconButton>
