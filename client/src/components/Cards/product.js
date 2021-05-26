@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -10,16 +9,28 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
+import { blue } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import { Grid, GridList, GridListTile } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    background: "linear-gradient(45deg, #49ABCA 30%, #214381 90%)",
+    maxWidth: 250,
+    maxHeight: 400,
+    padding: 5,
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    borderRadius: 3,
+    margin: 15,
+    font: 16,
+    color: "White",
+    display: GridListTile,
+  },
+  title: {
+    font: "20px",
   },
   media: {
     height: 0,
@@ -36,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     transform: "rotate(180deg)",
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: blue[900],
   },
 }));
 
@@ -51,11 +62,7 @@ export default function ItemCard({ item }) {
   return (
     <Card className={classes.root}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="item" className={classes.avatar}>
-            R
-          </Avatar>
-        }
+        avatar={<Avatar aria-label="item" className={classes.avatar}></Avatar>}
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
@@ -68,7 +75,8 @@ export default function ItemCard({ item }) {
       <CardMedia
         className={classes.media}
         image={item.image}
-        title={item.title} />
+        title={item.title}
+      />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           <p>{item.description}</p>

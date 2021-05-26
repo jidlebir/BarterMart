@@ -3,6 +3,7 @@ import { render } from "react-dom";
 // import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import ItemCard from "../Cards/product";
+import { Grid } from "@material-ui/core";
 
 const ItemList = ({ items, title }) => {
   if (!items.length) {
@@ -12,31 +13,14 @@ const ItemList = ({ items, title }) => {
   return (
     <div>
       <h3>{title}</h3>
-      {items &&
-        items.map((item) => (
-          <ItemCard item={item} />
-          // <div key={item._id} className="card mb-3">
-          //   <p className="card-header">
-          //     <Link
-          //       to={`/profile/${item.username}`}
-          //       style={{ fontWeight: 700 }}
-          //       className="text-light"
-          //     >
-          //       {item.username}
-          //     </Link>{" "}
-          //     item on {item.createdAt}
-          //   </p>
-          //   <div className="card-body">
-          //     <Link to={`/item/${item._id}`}>
-          //       <p>{item.description}</p>
-          //       {/* <p className="mb-0">
-          //         Comments: {item.commentCount} || Click to{" "}
-          //         {item.commentCount ? "see" : "start"} the discussion!
-          //       </p> */}
-          //     </Link>
-          //   </div>
-          // </div>
-        ))}
+      <Grid container>
+        {items &&
+          items.map((item) => (
+            <Grid item xs={3}>
+              <ItemCard className="item-cards " item={item} />
+            </Grid>
+          ))}
+      </Grid>
     </div>
   );
 };
