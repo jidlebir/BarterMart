@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -16,7 +15,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import { Grid, GridList, GridListTile } from "@material-ui/core";
-import lazyboy from "../../assets/pictures/Lazyboy.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {

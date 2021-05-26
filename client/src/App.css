@@ -41,7 +41,7 @@ body {
 
 /* HERO STYLING */
 #hero {
-  background: url(./assets/hero-bg.jpg) no-repeat center;
+  /* background: url(./assets/hero-bg.jpg) no-repeat center; */
   background-size: cover;
   min-height: 630px;
   width: 100%;
@@ -748,16 +748,6 @@ nav a:hover {
   background-color: var(--primary);
   padding: 1%;
 }
-
-
-
-
-
-
-
-
-
-
 
 .login-wrapper {
   display: flex;
