@@ -48,7 +48,7 @@ export const QUERY_USER = gql`
 
 export const QUERY_ACCOUNT = gql`
   {
-    profile {
+    account {
       _id
       username
       email
@@ -71,7 +71,7 @@ export const QUERY_ACCOUNT = gql`
 
 export const QUERY_ACCOUNT_BASIC = gql`
   {
-    profile {
+    account {
       _id
       username
       email

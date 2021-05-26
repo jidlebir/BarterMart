@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import ItemCard from "../components/Cards/product";
 
 import { useQuery } from "@apollo/react-hooks";
-import { QUERY_ITEMS } from "../utils/queries";
+import { QUERY_ITEMS, QUERY_ACCOUNT_BASIC } from "../utils/queries";
 import { makeStyles } from "@material-ui/core/styles";
 
 // import clsx from "clsx";
@@ -33,10 +33,10 @@ import ItemList from "../components/ItemList";
 const Homepages = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
   console.log(data);
-  // const { data: userData } = useQuery(QUERY_ACCOUNT_BASIC);
+  const { data: userData } = useQuery(QUERY_ACCOUNT_BASIC);
   const items = data?.items || [];
 
-  // const loggedIn = Auth.loggedIn();
+  const loggedIn = Auth.loggedIn();
 
   return (
     <main>
