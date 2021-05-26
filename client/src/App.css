@@ -1283,3 +1283,9 @@ nav a:hover {
   align-items: center;
   color: var(--light);
 }
+
+/* .item-cards {
+  margin: 5%;
+  padding-bottom: 5vh;
+  align-items: flex-end;
+} */
