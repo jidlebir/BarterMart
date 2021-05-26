@@ -16,7 +16,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
-import lazyboy from "../../assets/pictures/Lazyboy.png"
+import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -63,12 +63,14 @@ export default function ItemCard({ item }) {
             <MoreVertIcon />
           </IconButton>
         }
+        
         title={item.title}
         subheader={item.createdAt}
       />
       
-      <CardMedia 
+      <CardMedia component={Link} to={`/item/${item.id}`}
       className={classes.media} 
+      
       image={item.image} 
       title={item.title}/>
       <CardContent>
@@ -79,7 +81,7 @@ export default function ItemCard({ item }) {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
+        </IconButton >
         <IconButton aria-label="localoffer">
           <LocalOfferIcon />
         </IconButton>
