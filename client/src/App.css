@@ -743,7 +743,7 @@ nav a:hover {
   padding-bottom: var(--spacing-three);
 }
 .copyright {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   background-color: var(--primary);
   padding: 1%;
