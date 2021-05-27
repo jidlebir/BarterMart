@@ -19,6 +19,15 @@ const ItemList = ({ items, title }) => {
             </Grid>
           ))}
       </Grid>
+      {/* <div className="card-body">
+        <Link to={`/item/${item._id}`}>
+          <p>{item.description}</p>
+          <p className="mb-0">
+            Comments: {item.commentCount} || Click to{' '}
+            {item.commentCount ? 'see' : 'start'} the discussion!
+                </p>
+        </Link>
+      </div> */}
     </div>
   );
 };

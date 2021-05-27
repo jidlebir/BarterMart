@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_ITEMS = gql`
+export const ADD_ITEM = gql`
   mutation addItem($title: String!) {
     addItem(title: $title) {
       _id
@@ -45,10 +45,8 @@ export const ADD_COMMENT = gql`
     addComment(commentId: $commentId, commentText: $commentText) {
       _id
       commentText
-      acceptedFlag
-      tradeItem
       username
-      createdAt {
+      comments {
         _id
         commentText
         createdAt

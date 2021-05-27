@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     font: "20px",
   },
   media: {
-    height: 0,
+    height: "100%",
     paddingTop: "56.25%", // 16:9
   },
   expand: {
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   //   },
 }));
 
-export default function ItemCard({ item }) {
+export default function ItemCard({ item, title, image }) {
   const classes = useStyles();
   // const theme = useTheme();
   const [expanded, setExpanded] = React.useState(false);
@@ -78,6 +78,7 @@ export default function ItemCard({ item }) {
         }
         title={item.title}
 
+
         // subheader={item.createdAt}
       />
 
@@ -86,7 +87,8 @@ export default function ItemCard({ item }) {
         to={`/item/${item._id}`}
         className={classes.media}
         image={item.image}
-        title={item.title}
+
+
       />
 
       {/* <CardMedia
