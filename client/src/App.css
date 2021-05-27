@@ -756,6 +756,11 @@ nav a:hover {
   color: var(--light);
 }
 
+.footer-container {
+  position: fixed;
+  bottom: 0;
+}
+
 /* .item-cards {
   margin: 5%;
   padding-bottom: 5vh;

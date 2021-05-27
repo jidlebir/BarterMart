@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-100 bg-secondary p-3">
-      <div className="footer-container copyright ">
+    <footer>
+      <div className="footer-container w-100 bg-secondary p-3">
         Copyright &copy; 2021 BARTERMART
       </div>
       {/* <div className="customerSupport"></div> */}
