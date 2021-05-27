@@ -1,7 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
 // import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
 import ItemCard from "../Cards/product";
 import { Grid } from "@material-ui/core";
 
@@ -12,11 +10,11 @@ const ItemList = ({ items, title }) => {
 
   return (
     <div>
-      <h3>{title}</h3>
+      {/* <h3>{title}</h3> */}
       <Grid container>
         {items &&
           items.map((item) => (
-            <Grid item xs={3}>
+            <Grid item xs={12} item sm={6} item md={3} item lg={3}>
               <ItemCard className="item-cards " item={item} />
             </Grid>
           ))}

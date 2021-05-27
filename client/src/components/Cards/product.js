@@ -11,26 +11,25 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { blue } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import { Link } from "react-router-dom";
-
-import { Grid, GridList, GridListTile } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     background: "linear-gradient(45deg, #49ABCA 30%, #214381 90%)",
     maxWidth: 250,
     maxHeight: 400,
+
     padding: 5,
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     borderRadius: 3,
     margin: 15,
     font: 16,
     color: "White",
-    display: GridListTile,
+    flexGrow: 1,
   },
   title: {
     font: "20px",
@@ -52,16 +51,22 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: blue[900],
   },
+  // [theme.breakpoints.down("md")]: {
+  //     maxWidth: 150,
+  //   }
+  //   },
 }));
 
 export default function ItemCard({ item, title, image }) {
   const classes = useStyles();
+  // const theme = useTheme();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  // const matches = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -71,15 +76,19 @@ export default function ItemCard({ item, title, image }) {
             <MoreVertIcon />
           </IconButton>
         }
-
         title={item.title}
 
+
+        // subheader={item.createdAt}
       />
 
-      <CardMedia component={Link} to={`/item/${item._id}`}
+      <CardMedia
+        component={Link}
+        to={`/item/${item._id}`}
         className={classes.media}
-
         image={item.image}
+
+
       />
 
       {/* <CardMedia
@@ -95,7 +104,7 @@ export default function ItemCard({ item, title, image }) {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton >
+        </IconButton>
         <IconButton aria-label="localoffer">
           <LocalOfferIcon />
         </IconButton>
@@ -111,23 +120,7 @@ export default function ItemCard({ item, title, image }) {
         </IconButton> */}
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-            set aside for 10 minutes.
-          </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet
-          </Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then
-            serve.
-          </Typography>
-        </CardContent>
+        <CardContent></CardContent>
       </Collapse>
     </Card>
   );

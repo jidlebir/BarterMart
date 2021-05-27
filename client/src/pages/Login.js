@@ -3,10 +3,11 @@ import { Paper } from "@material-ui/core";
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Image from "../assets/hero-bg.jpg";
 
 const styles = {
   paperContainer: {
-    backgroundImage: `url({"./src/assets/hero-bg.jpg"})`,
+    backgroundImage: Image,
   },
 };
 
