@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ItemCard from "../components/Cards/product";
+// import ItemList from "../components/ItemList";
+import ItemForm from '../components/ItemForm';
 
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_ITEMS, QUERY_ACCOUNT_BASIC } from "../utils/queries";
@@ -42,7 +44,9 @@ const Homepages = () => {
     <main>
       <h1>Dashboard</h1>
 
+
       <ItemList items={items} />
+
     </main>
   );
 };

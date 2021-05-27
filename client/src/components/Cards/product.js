@@ -73,14 +73,14 @@ export default function ItemCard({ item }) {
         }
 
         title={item.title}
-        subheader={item.createdAt}
+
       />
 
       <CardMedia component={Link} to={`/item/${item.id}`}
         className={classes.media}
 
         image={item.image}
-        title={item.title} />
+      />
 
       {/* <CardMedia
         className={classes.media}
