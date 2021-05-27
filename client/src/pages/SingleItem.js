@@ -34,7 +34,7 @@ const SingleItem = props => {
     <main>
       <h1>Barter Item</h1>
 
-      <ItemCard item={item} />
+      <ItemCard item={item} title={item.title} image={item.image} />
 
       {/* <ItemForm item={item} /> */}
       <div>
