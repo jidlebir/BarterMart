@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 
 import ItemList from '../components/ItemList';
+import ItemForm from '../components/ItemForm';
 
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER, QUERY_ACCOUNT } from '../utils/queries';
@@ -49,6 +50,7 @@ const Profile = props => {
                     <ItemList items={user.items} title={`${user.username}'s items...`} />
                 </div>
             </div>
+            <div className="mb-3">{!userParam && <ItemForm />}</div>
         </div>
     );
 };
