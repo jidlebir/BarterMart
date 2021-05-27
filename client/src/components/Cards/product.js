@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -11,26 +12,37 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { blue } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import { Link } from "react-router-dom";
-
-import { Grid, GridList, GridListTile } from "@material-ui/core";
+import { GridList } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  //   root: {
+  //     maxWidth: 345,
+  //     [theme.breakpoints.down("md")]: {
+  //       maxWidth: 200,
+  //     },
+  //   },
+  //   media: {
+  //     height: 140,
+  //   },
+  // }));
   root: {
     background: "linear-gradient(45deg, #49ABCA 30%, #214381 90%)",
     maxWidth: 250,
     maxHeight: 400,
+
     padding: 5,
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     borderRadius: 3,
     margin: 15,
     font: 16,
     color: "White",
-    display: GridListTile,
+    flexGrow: 1,
   },
   title: {
     font: "20px",
@@ -52,16 +64,22 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: blue[900],
   },
+  // [theme.breakpoints.down("md")]: {
+  //     maxWidth: 150,
+  //   }
+  //   },
 }));
 
 export default function ItemCard({ item }) {
   const classes = useStyles();
+  // const theme = useTheme();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  // const matches = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -71,16 +89,17 @@ export default function ItemCard({ item }) {
             <MoreVertIcon />
           </IconButton>
         }
-
         title={item.title}
         subheader={item.createdAt}
       />
 
-      <CardMedia component={Link} to={`/item/${item.id}`}
+      <CardMedia
+        component={Link}
+        to={`/item/${item.id}`}
         className={classes.media}
-
         image={item.image}
-        title={item.title} />
+        title={item.title}
+      />
 
       {/* <CardMedia
         className={classes.media}
@@ -95,7 +114,7 @@ export default function ItemCard({ item }) {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton >
+        </IconButton>
         <IconButton aria-label="localoffer">
           <LocalOfferIcon />
         </IconButton>
